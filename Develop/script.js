@@ -14,21 +14,25 @@ goal: generate a secure password
     - Alert of written to page
 */ 
 
-
-
-// Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
 function writePassword() {
-  alert("Hello")
-  var length = prompt("please enter length")
+  alert("Hello, please answer the following questions to determine the right password for you. Ok is for yes, cancel is for no if there is nothing to enter.");
+  var length = prompt("Please enter desired password length. Must be at least 8 characters.");
+  var lowercase = confirm("Do you want lowercase letters in your password?");
+  var uppercase = confirm("Do you want uppercase letters in your password?");
+  var numberic = confirm("Do you want numbers in your password?");
+  var special = confirm("Do you want special characters in your password?");
+  var input = confirm("Password length is " + length + ". Password includes lowercase letters: " + lowercase + ". Password includes uppercase letters: " + uppercase + ". Password contains numbers: " + numberic + ". Password contains special characters: " + special + ".");
+  
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   console.log(passwordText)
   passwordText.value = password;
 
 }
+
+
 
 function generatePassword() {
   
